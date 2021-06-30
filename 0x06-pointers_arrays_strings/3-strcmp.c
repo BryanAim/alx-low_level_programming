@@ -1,23 +1,22 @@
 #include "holberton.h"
 /**
- * _strncpy - copies the string pointed to by src to dest.
- * @dest: Destination value.
- * @src: Source value.
- * @n: at most n bytes of src are copied.
- * Return: char.
+ * _strcmp - Compares the two strings s1 and s2.
+ * @s1: First given value.
+ * @s2: Second given value.
+ * Return: integer
  */
-char *_strncpy(char *dest, char *src, int n)
+int _strcmp(char *s1, char *s2)
 {
 
 	int i;
 
-	for (i = 0; i < n && src[i]; i++)
+	for (i = 0; s1[i]  && s2[i]; i++)
 	{
-		dest[i] = src[i];
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 	}
-	for (; i < n; i++)
-	{
-		dest[i] = '\0';
-	}
-	return (dest);
+
+	return (0);
 }
